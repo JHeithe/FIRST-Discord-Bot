@@ -98,13 +98,6 @@ async def on_voice_state_update(before,after):
                 await bot.add_roles(after,role)
 
 
-@bot.event
-async def on_server_join(server):
-    if "FIRST" in server.name:
-        await bot.leave_server(server)
-    elif "endreAFK0" in server.name:
-        await bot.leave_server(server)
-
 ##################################################
 #                 Help Command                   #
 ##################################################
