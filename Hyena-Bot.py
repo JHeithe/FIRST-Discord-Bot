@@ -31,7 +31,7 @@ else:
     tba_token = tba_token[:len(tba_token)-1]
 
 # FOR DISCORD
-bot = commands.Bot(command_prefix='&', description='')
+bot = commands.Bot(command_prefix='*', description='')
 bot.remove_command('help')
 afk_statuses = []
 questions = {}
@@ -56,7 +56,7 @@ async def on_message(message):
                 if "what is your purpose?" in message.content.lower():
                     await bot.send_message(message.channel, 'To pass butter.')
                 elif "what is your prefix?" in message.content.lower() or "what's your prefix?" in message.content.lower():
-                    await bot.send_message(message.channel, 'My prefix is `&` please use it sparingly.')
+                    await bot.send_message(message.channel, 'My prefix is `*` please use it sparingly.')
                 elif "what is the meaning of life?" in message.content.lower():
                     await bot.send_message(message.channel, '42.')
             for afkstatus in afk_statuses:
