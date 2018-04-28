@@ -193,7 +193,7 @@ async def hug(ctx):
 
 @bot.command()
 async def invite(self):
-    await self.bot.say("Invite me to your server!\nhttps://discordapp.com/oauth2/authorize?client_id=" + str(self.bot.user.id) + "&scope=bot")
+    await self.bot.say("Invite me to your server!\nhttps://discordapp.com/oauth2/authorize?client_id=" + str(bot.user.id) + "&scope=bot")
 
 @bot.command(pass_context=True)
 async def giveme(ctx):
