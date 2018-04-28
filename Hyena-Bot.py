@@ -59,7 +59,7 @@ async def on_message(message):
                     await bot.send_message(message.channel, 'My prefix is `*` please use it sparingly.')
                 elif "what is the meaning of life?" in message.content.lower():
                     await bot.send_message(message.channel, '42.')
-                elif "Hello World" in message.content.lower():
+                elif "hello world!" in message.content.lower():
                     await bot.send_message(message.channel, 'My Name is Hyena-Bot! I was created in a vain attempt to learn how to code in python. My master is @AnUglyHyena#0134!')
             for afkstatus in afk_statuses:
                 if afkstatus[0].id in mention.id:
