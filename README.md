@@ -2,4 +2,4 @@
 Learning how to code by creating a discord bot
 
 
-Clone of @austininseatlle/Nameless Bot
+Building off of @austininseatlle/Nameless Bot
