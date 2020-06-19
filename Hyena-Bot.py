@@ -104,17 +104,17 @@ async def on_voice_state_update(before,after):
 #                 Help Command                   #
 ##################################################
 
-user_commands = {"nick":{"title":"nick", "description":"Command used to change your nickname", "usage":"Example: &nick [nickname]"},
-"ping":{"title":"ping", "description":"Used to check latency between the bot and the Discord API", "usage":"Example: &ping"},
+user_commands = {"nick":{"title":"nick", "description":"Command used to change your nickname", "usage":"Example: *nick [nickname]"},
+"ping":{"title":"ping", "description":"Used to check latency between the bot and the Discord API", "usage":"Example: *ping"},
 "afk":{"title":"afk", "description":"Used to note that you are away from keyboard.", "usage":"Example: &afk [reason]"},
-"hug":{"title":"hug", "description":"Gives people hugs", "usage":"Example: &hug [mention]"},
-"invite":{"title":"invite", "description":"Invite link to bring Nameless to your server", "usage":"Example: &invite"},
-"giveme":{"title":"giveme", "description":"Give yourself roles", "usage":"Example: &giveme [role name]"},
-"removeme":{"title":"removeme", "description":"Remove your own roles", "usage":"Example: &removeme [role name]"},
-"tba":{"title":"tba", "description":"Check stats about FIRST Robotics Competition teams", "usage":"Example: &tba [search_type] [team_number]"},
-"whohas":{"title":"whohas", "description":"Command to check who has a role or nickname", "usage":"Example: &whohas [search_type] [search]"}}
-admin_commands = {"id":{"title":"id", "description":"Check user's id", "usage":"Example: &id [mention]"}, "purge":{"title":"purge", "description":"Used to delete more than one message in a channel", "usage":"Example: &purge [messages_to_purge]"}, "nickset":{"title":"nickset", "description":"Forced setting of someone else's nickname", "usage":"Example: &nickset [mention] [change_to]"}}
-host_commands = {"restart":{"title":"restart", "description":"Restarts Nameless and pulls a new github version", "usage":"Example: &restart"}, "leaveserver":{"title":"leaveserver", "description":"Can be used to tell the bot to leave a server", "usage":"Example: &leaveserver"}}
+"hug":{"title":"hug", "description":"Gives people hugs", "usage":"Example: *hug [mention]"},
+"invite":{"title":"invite", "description":"Invite link to bring Nameless to your server", "usage":"Example: *invite"},
+"giveme":{"title":"giveme", "description":"Give yourself roles", "usage":"Example: *giveme [role name]"},
+"removeme":{"title":"removeme", "description":"Remove your own roles", "usage":"Example: *removeme [role name]"},
+"tba":{"title":"tba", "description":"Check stats about FIRST Robotics Competition teams", "usage":"Example: *tba [search_type] [team_number]"},
+"whohas":{"title":"whohas", "description":"Command to check who has a role or nickname", "usage":"Example: *whohas [search_type] [search]"}},"pun":{"title":"pun", "description":"print a terrible joke", "usage":"Example: *pun"},
+admin_commands = {"id":{"title":"id", "description":"Check user's id", "usage":"Example: *id [mention]"}, "purge":{"title":"purge", "description":"Used to delete more than one message in a channel", "usage":"Example: &purge [messages_to_purge]"}, "nickset":{"title":"nickset", "description":"Forced setting of someone else's nickname", "usage":"Example: *nickset [mention] [change_to]"}}
+host_commands = {"restart":{"title":"restart", "description":"Restarts Nameless and pulls a new github version", "usage":"Example: *restart"}, "leaveserver":{"title":"leaveserver", "description":"Can be used to tell the bot to leave a server", "usage":"Example: *leaveserver"}}
 
 @bot.command(pass_context=True)
 async def help(ctx):
@@ -394,7 +394,10 @@ def find_channel(server : discord.Server, name : str):
     for chnl in bot.get_all_channels():
         if name in chnl.name and chnl.server.id in server.id:
             return chnl
-
+        
+@bot.command(pass_context=True)
+async def pun(ctx):
+        
 
 # Start Hyena-Bot
 bot.run(all_contents[:len(all_contents)-1])
